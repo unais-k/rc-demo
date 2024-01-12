@@ -20,19 +20,34 @@ const Appointment = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    if (e.target.name === 'serviceOfChoice') {
+      console.log(HeroContent[value].title,222222)
+   
+      const selectedValue = HeroContent[value]?.title
+  
+      setFormData({
+        ...formData,
+        [name]: selectedValue,
+      });
+      validateInput(name, selectedValue);
+    } else {
+      // If not a Select component, update the state based on the input's name and value
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+      validateInput(name, value);
+    }
 
     // Validate the input and update errors
-    validateInput(name, value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(errors)
+    console.log(formData,22222)
+
+    console.log(errors,11111)
 
     
     const hasErrors = Object.values(errors).some((error) => error.length > 0);
@@ -52,6 +67,9 @@ const Appointment = () => {
   };
 
   const validateInput = (name, value) => {
+
+    console.log(name,value,4444444)
+
     switch (name) {
       case 'name':
         setErrors((prevErrors) => ({
@@ -73,8 +91,11 @@ const Appointment = () => {
         break;
         case 'serviceOfChoice':
           setErrors((prevErrors) => ({
+           
             ...prevErrors,
-            serviceOfChoice: value.length < 1 ? 'Enter a service' : '',
+           
+            serviceOfChoice: value.length < 3 ? 'Enter a service' : '',
+            
           }));
           break;
       default:
@@ -130,10 +151,10 @@ const Appointment = () => {
                   label="Service of choice"
                   size="sm"
                   color="default"
+                  name="serviceOfChoice"
                   className="mt-4 p-0"
                   value={formData.serviceOfChoice}
-                  onChange={(value) => handleChange({ target: { name: 'serviceOfChoice', value } })}
-                >
+                  onChange={handleChange}                >
                   {HeroContent.map((animal, id) => (
                     <SelectItem
                       className="px-4 py-2.5 mt-2 text-base rounded-lg w-full text-black"
