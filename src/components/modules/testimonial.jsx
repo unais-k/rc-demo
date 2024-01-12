@@ -12,9 +12,9 @@ const Testimonial = () => {
   const cardCount = [1, 2, 3, 4, 5, 6];
 
   return (
-    <div className="px-10 mb-5 md:mb-10 w-full ">
+    <div className="sm:px-10 mb-5 md:mb-10 w-full ">
       <Swiper
-        className="px-10"
+        className="sm:px-10"
         // install Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -28,7 +28,7 @@ const Testimonial = () => {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 50,
           },
           640: {
             slidesPerView: 1,
