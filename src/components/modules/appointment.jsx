@@ -11,8 +11,9 @@ const Appointment = () => {
             <img src="/retouched65.jpg" className="rounded-2xl" alt="" />
           </div>
           <form className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
+            <div className="font-semibold font-montserrat text-gray-800">Book An Appointment</div>
             <div className="flex flex-col">
-              <div className="flex-grow mt-4">
+              <div className="flex-grow">
                 <input
                   placeholder="Name"
                   className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base rounded-lg bg-default  focus:outline-none"

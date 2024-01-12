@@ -18,6 +18,9 @@ const App = () => {
         <div className="xl:max-w-[1480px] w-full">
           <Appointment />
           <WRC />
+          <div className="font-semibold font-montserrat text-gray-900 my-5 md:my-10 "><span>
+          Patient Testimonials
+          </span></div>
           <Testimonial />
         </div>
       </div>
