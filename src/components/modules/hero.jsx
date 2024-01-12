@@ -8,167 +8,73 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { HeroContent } from './../../constants/index';
 
 const Hero = () => {
   return (
     <Swiper
+      className=''
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={3}
-      // navigation
+      navigation={{
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+      }
       pagination={{ clickable: true }}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      }}
+
     // scrollbar={{ draggable: true }}
     // onSwiper={(swiper) => console.log(swiper)}
     // onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
-
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
+      {HeroContent?.map((item, id) => {
+        return (
+          <SwiperSlide className='flex justify-center items-center h-[500px] w-[80%]' key={id}>
+            <div className="relative">
+              <img
+                alt={item.title}
+                src={item.img}
+                className="max-h-[500px] h-[400px] w-full object-cover rounded-2xl"
+              />
+              <div className="absolute bottom-0 bg-color-of-card w-full rounded-b-2xl">
+                <div className="flex justify-center h-20 w-full items-center flex-row">
+                  <span className='text-sm font-montserrat text-white'>
+                    {item.title}
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
+          </SwiperSlide>
 
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
+        )
+      })}
 
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
-            </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
-
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
-            </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
-
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
-            </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
-
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
-            </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      <SwiperSlide><a className="group relative block bg-black">
-        <img
-          alt="Developer"
-          src="https://images.unsplash.com/photo-1603871165848-0aa92c869fa1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=772&q=80"
-          className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
-
-        <div className="relative p-4 sm:p-6 lg:p-8">
-          <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Developer</p>
-
-          <p className="text-xl font-bold text-white sm:text-2xl">Tony Wayne</p>
-
-          <div className="mt-32 sm:mt-48 lg:mt-64">
-            <div
-              className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p className="text-sm text-white">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis perferendis hic asperiores
-                quibusdam quidem voluptates doloremque reiciendis nostrum harum. Repudiandae?
-              </p>
-            </div>
-          </div>
-        </div>
-      </a></SwiperSlide>
-      
-
-      ...
+      <div className="swiper-button-prev">
+        <i className="icon-arrow-long-right review-swiper-button-next"></i>
+      </div>
+      <div className="swiper-button-next">
+        <i className="icon-arrow-long-left review-swiper-button-prev"></i>
+      </div>
     </Swiper>
   );
 };

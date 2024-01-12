@@ -32,9 +32,9 @@ const Testimonial = () => {
   function calculateSlidesPerView() {
     const screenWidth = window.innerWidth;
 
-    if (screenWidth >= 1024) {
+    if (screenWidth >= 1204) {
       return 3; 
-    } else if (screenWidth >= 768) {
+    } else if (screenWidth >= 868) {
       return 2; 
     } else {
       return 1; 
@@ -75,7 +75,7 @@ const Testimonial = () => {
         {cardCount.map((index) => (
           
           <SwiperSlide key={index}>
-           <div className="h-80 flex items-center max-w-lg mx-w-md">
+           <div className="h-80 flex items-center min-w-[250px]">
               <div className="w-full mx-auto bg-slate-800 shadow-md rounded-3xl relative h-3/4">
                 <div className="w-full flex rounded-3xl justify-center">
                   <div className="mt-[-35px] w-20 h-20 bg-white rounded-full flex justify-center">

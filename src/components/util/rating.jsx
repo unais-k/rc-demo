@@ -1,4 +1,3 @@
-import React from 'react';
 import RatingStars from 'react-rating-stars-component';
 
 const RatingComponent = () => {
