@@ -4,9 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-*::-webkit-scrollbar {
-  width: 5px;
-}
 
 *::-webkit-scrollbar-track {
   background: gray;
@@ -18,7 +15,7 @@
   border: 1px thin gray;
 }
 
-.swiper-pagination-bullet {
+.swiper-pagination-bul {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 9999px;
@@ -52,12 +49,11 @@
 }
 
 .bg-color-of-card {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
-  width: 70px;
-  height: 5px;
-  border-radius: 0;
-  margin-top: 40px;
-  background-color: aqua !important;
+    background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    transparent
+  );
 }
 
 /* Menu  */
@@ -128,5 +124,5 @@
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  transition-duration: 0.25s;
+  transition-duration: 0dff04
 }
