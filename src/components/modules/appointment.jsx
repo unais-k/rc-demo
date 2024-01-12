@@ -21,7 +21,7 @@ const Appointment = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (e.target.name === 'serviceOfChoice') {
-      console.log(HeroContent[value].title,222222)
+   
    
       const selectedValue = HeroContent[value]?.title
   
