@@ -5,7 +5,7 @@ import LinkedInLogo from "/linkedin-24.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkBlue flex flex-col md:gap-10 py-2 gap-0 md:flex-row items-center font-light text-white px-12 lg:px-24 text-[11px]">
+    <footer className="bg-darkBlue flex flex-col gap-10 p-10 md:flex-row items-center font-light text-white lg:px-24 text-[11px]">
       <section className="w-full xl:w-1/2">
         <div className="w-full xl:w-1/2 ">
           <h3 className="font-semibold text-sm">Contact Us</h3>
@@ -21,7 +21,7 @@ const Footer = () => {
           <p>Copyright Right Care 2016. All Rights Reserved</p>
         </div>
       </section>
-      <section className="w-full xl:w-1/2 flex flex-col md:flex-row gap-10 xl:gap-32 justify-center py-10">
+      <section className="w-full xl:w-1/2 flex flex-row gap-10 xl:gap-32 justify-between sm:justify-start sm:gap-32 xl:justify-center xl:py-10">
         <div>
           <h3 className="font-semibold text-sm">Quick Links</h3>
           <ul className=" mt-7 flex flex-col gap-2">
