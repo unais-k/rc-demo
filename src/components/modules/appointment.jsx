@@ -1,7 +1,11 @@
 
 const Appointment = () => {
   return (
-    <div>Appointment</div>
+    <div>
+<div></div>
+
+<div></div>
+    </div>
   )
 }
 
